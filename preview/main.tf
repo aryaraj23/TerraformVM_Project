@@ -389,7 +389,7 @@ resource "aws_lb" "lb-webservers" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.lb_webservers.id]
-  subnets            = [ aws_subnet.subnet_1a.id, aws_subnet.subnet_1b.id ]
+  subnets            = [ aws_subnet.subnet_1a.id, aws_subnet.subnet_1b.id, aws_subnet.subnet_1c.id  ]
   tags = {
     Environment = "preview"
   }
