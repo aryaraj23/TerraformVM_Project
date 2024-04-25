@@ -19,7 +19,7 @@ sudo apt-get install -y docker-ce
 sudo usermod -aG docker ubuntu
 
 #Docker login
-sudo docker login -u aryaraj23 -p 23@arU#0997!
+sudo docker login -u axxx -p xxxx
 
 # Run a Docker container
 sudo docker run -d --name my-container -p 80:80 aryaraj23/demo-backend1:latest
