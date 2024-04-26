@@ -20,7 +20,7 @@ resource "aws_vpc" "myvpc" {
 resource "aws_subnet" "subnet_1a" {
   vpc_id     = aws_vpc.myvpc.id
   cidr_block = "10.0.1.0/24"
-  availability_zone = "ap-south-1c"
+  availability_zone = "ap-south-1a"
   map_public_ip_on_launch = "true"
 
   tags = {
@@ -102,7 +102,7 @@ resource "aws_instance" "web001" {
 resource "aws_instance" "web002" {
   ami           = "ami-007020fd9c84e18c7"
   instance_type = "t3.micro"
-  subnet_id = aws_subnet.subnet_1b.id
+  subnet_id = aws_subnet.subnet_1a.id
   vpc_security_group_ids = [ aws_security_group.webservers.id ]
   key_name = "Arya"
   tags = {
@@ -118,7 +118,7 @@ resource "aws_instance" "web002" {
 resource "aws_instance" "web003" {
   ami           = "ami-007020fd9c84e18c7"
   instance_type = "t3.micro"
-  subnet_id = aws_subnet.subnet_1c.id
+  subnet_id = aws_subnet.subnet_1a.id
   vpc_security_group_ids = [ aws_security_group.webservers.id ]
   key_name = "Arya"
   tags = {
@@ -134,7 +134,7 @@ resource "aws_instance" "web003" {
 resource "aws_instance" "web004" {
   ami           = "ami-007020fd9c84e18c7"
   instance_type = "t3.micro"
-  subnet_id = aws_subnet.subnet_1a.id
+  subnet_id = aws_subnet.subnet_1b.id
   vpc_security_group_ids = [ aws_security_group.webservers.id ]
   key_name = "Arya"
   tags = {
@@ -168,7 +168,7 @@ resource "aws_instance" "web005" {
 resource "aws_instance" "web006" {
   ami           = "ami-007020fd9c84e18c7"
   instance_type = "t3.micro"
-  subnet_id = aws_subnet.subnet_1c.id
+  subnet_id = aws_subnet.subnet_1b.id
   vpc_security_group_ids = [ aws_security_group.webservers.id ]
   key_name = "Arya"
   tags = {
@@ -185,8 +185,8 @@ resource "aws_instance" "web006" {
 resource "aws_instance" "web007" {
   ami           = "ami-007020fd9c84e18c7"
   instance_type = "t3.micro"
-  subnet_id = aws_subnet.subnet_1a.id
-  vpc_security_group_ids = [ aws_security_group.webservers.id ]
+  subnet_id = aws_subnet.subnet_1c.id
+  vpc_security_group_ids = [ aws_security_group.webserverPython.id ]
   key_name = "Arya"
   tags = {
     Name = "Web007"
@@ -202,8 +202,8 @@ resource "aws_instance" "web007" {
 resource "aws_instance" "web008" {
   ami           = "ami-007020fd9c84e18c7"
   instance_type = "t3.micro"
-  subnet_id = aws_subnet.subnet_1b.id
-  vpc_security_group_ids = [ aws_security_group.webservers.id ]
+  subnet_id = aws_subnet.subnet_1c.id
+  vpc_security_group_ids = [ aws_security_group.webserverPython.id ]
   key_name = "Arya"
   tags = {
     Name = "Web008"
@@ -220,7 +220,7 @@ resource "aws_instance" "web009" {
   ami           = "ami-007020fd9c84e18c7"
   instance_type = "t3.micro"
   subnet_id = aws_subnet.subnet_1c.id
-  vpc_security_group_ids = [ aws_security_group.webservers.id ]
+  vpc_security_group_ids = [ aws_security_group.webserverPython.id ]
   key_name = "Arya"
   tags = {
     Name = "Web009"
